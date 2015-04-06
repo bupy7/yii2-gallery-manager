@@ -1,9 +1,4 @@
 <?php
-/**
- * Ukrainian message translations.
- *
- * @version $Id: $
- */
 return [
     'Description' => 'Опис',
     'Name' => 'Назва',

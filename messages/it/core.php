@@ -1,11 +1,4 @@
 <?php
-/**
- * Italian message translations.
- *
- * @author duedweb
- *
- * @version $Id: $
- */
 return [
     'Add…' => 'Aggiungi',
     'Close' => 'Chiudi',

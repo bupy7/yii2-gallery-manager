@@ -2,6 +2,8 @@
 
 Apr 6, 2015
     - Vasilij Belosludcev forked repository.
+    - Refactoring.
+    - Added possibility use instance of ActiveQuery to types of gallery for search gallery.
 
 Apr 3, 2015
     - Added possibility to change table name for gallery images 

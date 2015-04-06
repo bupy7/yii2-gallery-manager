@@ -1,12 +1,4 @@
 <?php
-/**
- * German message translations.
- *
- * @author DrMabuse
- * @link https://bitbucket.org/z_bodya/gallerymanager/issue/12/language
- *
- * @version $Id: $
- */
 return [
     'Add…' => 'Hinzufügen',
     'Close' => 'Schliessen',

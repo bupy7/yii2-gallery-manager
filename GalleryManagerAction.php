@@ -7,7 +7,8 @@ use Yii;
 use yii\base\Action;
 use yii\db\ActiveRecord;
 use yii\helpers\Json;
-use yii\web\HttpException;
+use yii\web\NotFoundHttpException;
+use yii\web\BadRequestHttpException;
 use yii\web\UploadedFile;
 
 /**
@@ -19,6 +20,7 @@ use yii\web\UploadedFile;
  *  - Changing name/description associated with image
  *
  * @author Bogdan Savluk <savluk.bogdan@gmail.com>
+ * @author Vasilij Belosludcev http://mihaly4.ru
  */
 class GalleryManagerAction extends Action
 {
@@ -45,25 +47,27 @@ class GalleryManagerAction extends Action
         $this->behaviorName = Yii::$app->request->get('behaviorName');
         $this->galleryId = Yii::$app->request->get('galleryId');
 
-        $this->owner = call_user_func([$this->types[$this->type], 'findOne'], $this->galleryId);
+        $this->owner = $this->types[$this->type]->andWhere(['id' => $this->galleryId])->one();
+        if ($this->owner == null) {
+            throw new NotFoundHttpException('Gallery not found.');
+        }
         $this->behavior = $this->owner->getBehavior($this->behaviorName);
 
         switch ($action) {
             case 'delete':
                 return $this->actionDelete(Yii::$app->request->post('id'));
-                break;
+               
             case 'ajaxUpload':
                 return $this->actionAjaxUpload();
-                break;
+               
             case 'changeData':
                 return $this->actionChangeData(Yii::$app->request->post('photo'));
-                break;
+               
             case 'order':
                 return $this->actionOrder(Yii::$app->request->post('order'));
-                break;
+
             default:
-                throw new HttpException(400, 'Action do not exists');
-                break;
+                throw new BadRequestHttpException('Action do not exists');
         }
     }
 
@@ -124,7 +128,7 @@ class GalleryManagerAction extends Action
     public function actionOrder($order)
     {
         if (count($order) == 0) {
-            throw new HttpException(400, 'No data, to save');
+            throw new BadRequestHttpException('No data, to save');
         }
         $res = $this->behavior->arrange($order);
 
@@ -144,7 +148,7 @@ class GalleryManagerAction extends Action
     public function actionChangeData($imagesData)
     {
         if (count($imagesData) == 0) {
-            throw new HttpException(400, 'Nothing to save');
+            throw new BadRequestHttpException('Nothing to save');
         }
         $images = $this->behavior->updateImagesData($imagesData);
         $resp = array();
