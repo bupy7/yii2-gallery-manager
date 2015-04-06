@@ -1,12 +1,5 @@
 <?php
-/**
- * @var $this View
- *
- * @author Bogdan Savluk <savluk.bogdan@gmail.com>
- */
 use yii\helpers\Html;
-use yii\web\View;
-
 ?>
 <?php echo Html::beginTag('div', $this->context->options); ?>
     <!-- Gallery Toolbar -->
@@ -14,7 +7,7 @@ use yii\web\View;
     <div class="btn-toolbar" style="padding:4px">
         <div class="btn-group" style="display: inline-block;">
             <div class="btn btn-success btn-file" style="display: inline-block">
-                <i class="glyphicon glyphicon-plus"></i><?php echo Yii::t('galleryManager/main', 'Add…'); ?>
+                <i class="glyphicon glyphicon-plus"></i><?php echo Yii::t('bupy7/gallery/manager/core', 'Add…'); ?>
                 <input type="file" name="image" class="afile" accept="image/*" multiple="multiple"/>
             </div>
         </div>
@@ -22,15 +15,15 @@ use yii\web\View;
 
             <label class="btn btn-default">
                 <input type="checkbox" style="margin-right: 4px;" class="select_all"><?php echo Yii::t(
-                    'galleryManager/main',
+                    'bupy7/gallery/manager/core',
                     'Select all'
                 ); ?>
             </label>
             <div class="btn btn-default disabled edit_selected">
-                <i class="glyphicon glyphicon-pencil"></i> <?php echo Yii::t('galleryManager/main', 'Edit'); ?>
+                <i class="glyphicon glyphicon-pencil"></i> <?php echo Yii::t('bupy7/gallery/manager/core', 'Edit'); ?>
             </div>
             <div class="btn btn-default disabled remove_selected">
-                <i class="glyphicon glyphicon-remove"></i> <?php echo Yii::t('galleryManager/main', 'Remove'); ?>
+                <i class="glyphicon glyphicon-remove"></i> <?php echo Yii::t('bupy7/gallery/manager/core', 'Remove'); ?>
             </div>
         </div>
     </div>
@@ -49,17 +42,17 @@ use yii\web\View;
                 <div class="modal-header">
                     <a class="close" data-dismiss="modal">×</a>
 
-                    <h3 class="modal-title"><?php echo Yii::t('galleryManager/main', 'Edit information') ?></h3>
+                    <h3 class="modal-title"><?php echo Yii::t('bupy7/gallery/manager/core', 'Edit information') ?></h3>
                 </div>
                 <div class="modal-body">
                     <div class="form"></div>
                 </div>
                 <div class="modal-footer">
                     <a href="#" class="btn btn-primary save-changes">
-                        <?php echo Yii::t('galleryManager/main', 'Save changes') ?>
+                        <?php echo Yii::t('bupy7/gallery/manager/core', 'Save changes') ?>
                     </a>
                     <a href="#" class="btn" data-dismiss="modal"><?php echo Yii::t(
-                            'galleryManager/main',
+                            'bupy7/gallery/manager/core',
                             'Close'
                         ) ?></a>
                 </div>
@@ -70,7 +63,7 @@ use yii\web\View;
     <div class="overlay">
         <div class="overlay-bg">&nbsp;</div>
         <div class="drop-hint">
-            <span class="drop-hint-info"><?php echo Yii::t('galleryManager/main', 'Drop Files Here…') ?></span>
+            <span class="drop-hint-info"><?php echo Yii::t('bupy7/gallery/manager/core', 'Drop Files Here…') ?></span>
         </div>
     </div>
     <div class="progress-overlay">
@@ -80,7 +73,7 @@ use yii\web\View;
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h3><?php echo Yii::t('galleryManager/main', 'Uploading images…') ?></h3>
+                        <h3><?php echo Yii::t('bupy7/gallery/manager/core', 'Uploading images…') ?></h3>
                     </div>
                     <div class="modal-body">
                         <div class="progress ">

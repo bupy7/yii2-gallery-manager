@@ -1,6 +1,6 @@
 <?php
 
-namespace zxbodya\yii2\galleryManager;
+namespace bupy7\gallery\manager;
 
 class GalleryImage
 {

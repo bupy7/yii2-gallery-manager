@@ -1,25 +1,24 @@
 <?php
 
-namespace zxbodya\yii2\galleryManager;
+namespace bupy7\gallery\manager;
 
-use Yii;
 use yii\web\AssetBundle;
 
 class GalleryManagerAsset extends AssetBundle
 {
-    public $sourcePath = '@zxbodya/yii2/galleryManager/assets';
+    
+    public $sourcePath = '@bupy7/gallery/manager/assets';
     public $js = [
-        'jquery.iframe-transport.js',
-        'jquery.galleryManager.js',
-        // 'jquery.iframe-transport.min.js',
-        // 'jquery.galleryManager.min.js',
+        'jquery.iframe-transport.min.js',
+        'jquery.gallery-manager.min.js',
     ];
     public $css = [
-        'galleryManager.css'
+        'gallery-manager.min.css'
     ];
     public $depends = [
-        'yii\web\JqueryAsset',
-        'yii\jui\JuiAsset'
+        'yii\jui\JuiAsset',
+        'yii\web\YiiAsset',
+        'yii\bootstrap\BootstrapPluginAsset',
     ];
 
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace zxbodya\yii2\galleryManager;
+namespace bupy7\gallery\manager;
 
 use Yii;
 use yii\base\Exception;
@@ -42,11 +42,13 @@ class GalleryManager extends Widget
     public function registerTranslations()
     {
         $i18n = Yii::$app->i18n;
-        $i18n->translations['galleryManager/*'] = [
+        $i18n->translations['bupy7/gallery/manager/*'] = [
             'class' => 'yii\i18n\PhpMessageSource',
-            'sourceLanguage' => 'en-US',
-            'basePath' => '@zxbodya/yii2/galleryManager/messages',
-            'fileMap' => [],
+            'sourceLanguage' => 'en',
+            'basePath' => '@bupy7/gallery/manager/messages',
+            'fileMap' => [
+                'bupy7/gallery/manager/core' => 'core.php',
+            ],
         ];
     }
 
@@ -83,8 +85,8 @@ class GalleryManager extends Widget
             'deleteUrl' => Url::to($baseUrl + ['action' => 'delete']),
             'updateUrl' => Url::to($baseUrl + ['action' => 'changeData']),
             'arrangeUrl' => Url::to($baseUrl + ['action' => 'order']),
-            'nameLabel' => Yii::t('galleryManager/main', 'Name'),
-            'descriptionLabel' => Yii::t('galleryManager/main', 'Description'),
+            'nameLabel' => Yii::t('bupy7/gallery/manager/core', 'Name'),
+            'descriptionLabel' => Yii::t('bupy7/gallery/manager/core', 'Description'),
             'photos' => $images,
         );
 

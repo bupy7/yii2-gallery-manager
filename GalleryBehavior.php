@@ -1,6 +1,6 @@
 <?php
 
-namespace zxbodya\yii2\galleryManager;
+namespace bupy7\gallery\manager;
 
 use Imagine\Image\Box;
 use Imagine\Image\ImageInterface;
@@ -14,6 +14,7 @@ use yii\imagine\Image;
  * Behavior for adding gallery to any model.
  *
  * @author Bogdan Savluk <savluk.bogdan@gmail.com>
+ * @author Vasilij Belosludcev http://mihaly4.ru
  *
  * @property string $galleryId
  */
