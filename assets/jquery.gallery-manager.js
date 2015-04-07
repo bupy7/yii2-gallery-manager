@@ -25,7 +25,7 @@
         if (!opts.hasName) {
             if (!opts.hasDesc) {
                 $gallery.addClass('no-name-no-desc');
-                $('.edit_selected', $gallery).hide();
+                $('.edit-selected', $gallery).hide();
             }
             else
                 $gallery.addClass('no-name');
@@ -73,21 +73,26 @@
             return $(html);
         }
 
-        var photoTemplate = '<div class="photo">' + '<div class="image-preview"><img src=""/></div><div class="caption">';
+        var photoTemplate = '<div class="photo col-md-3 col-sm-6 col-xs-12">' 
+            + '<div class="image-preview"><img src=""/></div>'
+            + '<div class="caption">';
         if (opts.hasName) {
             photoTemplate += '<h5></h5>';
         }
         if (opts.hasDesc) {
             photoTemplate += '<p></p>';
         }
-        photoTemplate += '</div><div class="actions">';
-
+        photoTemplate += '</div>'
+            + '<div class="wrap-actions">'
+                + '<div class="actions pull-right btn-group">';
         if (opts.hasName || opts.hasDesc) {
-            photoTemplate += '<span class="editPhoto btn btn-primary btn-xs"><i class="glyphicon glyphicon-pencil glyphicon-white"></i></span> ';
+            photoTemplate += '<span class="edit-photo btn btn-primary btn-xs"><i class="glyphicon glyphicon-pencil glyphicon-white"></i></span>';
         }
-
-        photoTemplate += '<span class="deletePhoto btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove glyphicon-white"></i></span>' +
-            '</div><input type="checkbox" class="photo-select"/></div>';
+        photoTemplate += '<span class="delete-photo btn btn-danger btn-xs"><i class="glyphicon glyphicon-remove glyphicon-white"></i></span>'
+            + '</div>'
+            + '<div class="pull-left"><input type="checkbox" class="photo-select"/></div>'
+            + '</div>'
+            + '</div>';
 
 
         function addPhoto(id, src, name, description, rank) {
@@ -166,9 +171,9 @@
             var selectedCount = $('.photo.selected', $sorter).length;
             $('.select_all', $gallery).prop('checked', $('.photo', $sorter).length == selectedCount);
             if (selectedCount == 0) {
-                $('.edit_selected, .remove_selected', $gallery).addClass('disabled');
+                $('.edit-selected, .remove-selected', $gallery).addClass('disabled');
             } else {
-                $('.edit_selected, .remove_selected', $gallery).removeClass('disabled');
+                $('.edit-selected, .remove-selected', $gallery).removeClass('disabled');
             }
         }
 
@@ -182,8 +187,8 @@
         }
 
         $images
-            .on('click', '.photo .deletePhoto', deleteClick)
-            .on('click', '.photo .editPhoto', editClick)
+            .on('click', '.photo .delete-photo', deleteClick)
+            .on('click', '.photo .edit-photo', editClick)
             .on('click', '.photo .photo-select', selectChanged);
 
 
@@ -356,7 +361,7 @@
 
         });
 
-        $('.edit_selected', $gallery).click(function (e) {
+        $('.edit-selected', $gallery).click(function (e) {
             e.preventDefault();
             var ids = [];
             $('.photo.selected', $sorter).each(function () {
@@ -366,7 +371,7 @@
             return false;
         });
 
-        $('.remove_selected', $gallery).click(function (e) {
+        $('.remove-selected', $gallery).click(function (e) {
             e.preventDefault();
             var ids = [];
             $('.photo.selected', $sorter).each(function () {

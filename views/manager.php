@@ -4,26 +4,23 @@ use yii\helpers\Html;
 <?php echo Html::beginTag('div', $this->context->options); ?>
     <!-- Gallery Toolbar -->
 
-    <div class="btn-toolbar" style="padding:4px">
-        <div class="btn-group" style="display: inline-block;">
-            <div class="btn btn-success btn-file" style="display: inline-block">
+    <div class="btn-toolbar">
+        <div class="btn-group">
+            <div class="btn btn-success btn-file">
                 <i class="glyphicon glyphicon-plus"></i><?php echo Yii::t('bupy7/gallery/manager/core', 'Add…'); ?>
                 <input type="file" name="image" class="afile" accept="image/*" multiple="multiple"/>
             </div>
-        </div>
-        <div class="btn-group" style="display: inline-block;">
-
             <label class="btn btn-default">
                 <input type="checkbox" style="margin-right: 4px;" class="select_all"><?php echo Yii::t(
                     'bupy7/gallery/manager/core',
                     'Select all'
                 ); ?>
             </label>
-            <div class="btn btn-default disabled edit_selected">
-                <i class="glyphicon glyphicon-pencil"></i> <?php echo Yii::t('bupy7/gallery/manager/core', 'Edit'); ?>
+            <div class="btn btn-default disabled edit-selected">
+                <i class="glyphicon glyphicon-pencil"></i>
             </div>
-            <div class="btn btn-default disabled remove_selected">
-                <i class="glyphicon glyphicon-remove"></i> <?php echo Yii::t('bupy7/gallery/manager/core', 'Remove'); ?>
+            <div class="btn btn-default disabled remove-selected">
+                <i class="glyphicon glyphicon-remove"></i>
             </div>
         </div>
     </div>
@@ -32,7 +29,7 @@ use yii\helpers\Html;
     <!-- Gallery Photos -->
     <div class="sorter">
         <div class="images"></div>
-        <br style="clear: both;"/>
+        <div class="clearfix"></div>
     </div>
 
     <!-- Modal window to edit photo information -->

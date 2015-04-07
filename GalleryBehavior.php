@@ -32,12 +32,12 @@ class GalleryBehavior extends Behavior
      * Widget preview height
      * @var int
      */
-    public $previewHeight = 200;
+    public $previewHeight = 250;
     /**
      * Widget preview width
      * @var int
      */
-    public $previewWidth = 200;
+    public $previewWidth = 250;
     /**
      * Extension for saved images
      * @var string

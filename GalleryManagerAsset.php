@@ -11,9 +11,12 @@ class GalleryManagerAsset extends AssetBundle
     public $js = [
         'jquery.iframe-transport.min.js',
         'jquery.gallery-manager.min.js',
+        //'jquery.iframe-transport.js',
+        //'jquery.gallery-manager.js',
     ];
     public $css = [
-        'gallery-manager.min.css'
+        'gallery-manager.min.css',
+        //'gallery-manager.css',
     ];
     public $depends = [
         'yii\jui\JuiAsset',

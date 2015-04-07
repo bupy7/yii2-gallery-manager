@@ -98,7 +98,7 @@ class GalleryManager extends Widget
         $this->options['id'] = $this->id;
         $this->options['class'] = 'gallery-manager';
 
-        return $this->render('galleryManager');
+        return $this->render('manager');
     }
 
 }

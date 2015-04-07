@@ -1,5 +1,9 @@
 # yii2-gallery-manager changelog
 
+Apr 7, 2015
+    - Deleted build.sh. Replaced sass to simply css file.
+    - Added Boostrap styles to template gallery.
+
 Apr 6, 2015
     - Vasilij Belosludcev forked repository.
     - Refactoring.
