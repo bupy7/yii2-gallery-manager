@@ -154,7 +154,7 @@ class GalleryBehavior extends Behavior
             $imagesData = $query
                 ->select(['id', 'name', 'description', 'rank'])
                 ->from($this->tableName)
-                ->where(['type' => $this->type, 'ownerId' => $this->getGalleryId()])
+                ->where(['type' => $this->type, 'owner_id' => $this->getGalleryId()])
                 ->orderBy(['rank' => 'asc'])
                 ->all();
 
@@ -304,7 +304,7 @@ class GalleryBehavior extends Behavior
                 $this->tableName,
                 [
                     'type' => $this->type,
-                    'ownerId' => $this->getGalleryId()
+                    'owner_id' => $this->getGalleryId()
                 ]
             )->execute();
 
@@ -379,7 +379,7 @@ class GalleryBehavior extends Behavior
             $rawImages = (new Query())
                 ->select(['id', 'name', 'description', 'rank'])
                 ->from($this->tableName)
-                ->where(['type' => $this->type, 'ownerId' => $this->getGalleryId()])
+                ->where(['type' => $this->type, 'owner_id' => $this->getGalleryId()])
                 ->andWhere(['in', 'id', $imageIds])
                 ->orderBy(['rank' => 'asc'])
                 ->all();
